@@ -30,8 +30,7 @@ def limpiar_valor(texto):
 def scrape_bcv():
     # Si los datos están en caché, los devolvemos de una vez
     if "tasas" in cache:
-        return "Hola esta en cache"
-        #return cache["tasas"]
+        return cache["tasas"]
     url = "https://www.bcv.org.ve" # Sitio web objetivo
 
     try:
@@ -63,6 +62,7 @@ def scrape_bcv():
             "fecha_valor": fecha if fecha else "No disponible",
             "fuente": url,
             "info_adicional": info if info else "No disponible",
+            "logo": logo if logo else "No disponible",
         }
 
         # Guardar en caché
