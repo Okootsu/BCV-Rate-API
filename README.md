@@ -1,6 +1,6 @@
 # BCV Rate API
 
-API REST construida con **Python** y **Flask** para obtener las tasas oficiales de cambio del **Banco Central de Venezuela (BCV)** mediante técnicas de web scraping.
+API REST construida con **Python** y **FastAPI** para obtener las tasas oficiales de cambio del **Banco Central de Venezuela (BCV)** mediante técnicas de web scraping.
 
 ## 🚀 Características
 
@@ -34,15 +34,15 @@ Para solucionar esto sin desactivar la verificación de seguridad:
 
 2.  **Instala las dependencias necesarias:**
     ```bash
-    pip install flask flask-cors requests beautifulsoup4 cachetools
+    pip install "fastapi[standard]" requests beautifulsoup4 cachetools
     ```
 
 3.  **Ejecución:**
     ```bash
-    python app.py
+    python uvicorn main:app --host 0.0.0.0 --port 8000 --reload
     ```
 
-La API estará disponible en: `http://localhost:5000/api/v1/tasas`
+La API estará disponible en: `http://localhost:5000/tasas`
 
 ---
 
